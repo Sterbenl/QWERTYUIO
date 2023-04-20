@@ -1,0 +1,336 @@
+{
+	"info": {
+		"_postman_id": "0200e3d8-d314-4419-8398-d3de73a6236b",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25411767"
+	},
+	"item": [
+		{
+			"name": "Post User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "Данил",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "Олейник",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "89831231231",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "qweqwe",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/signup",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "Данил",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "last_name",
+							"value": "Олейник",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "phone",
+							"value": "89831231231",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "qweqwe",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/auth",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|kCUdXyTBfWXgQI0XTUFJWH1vjPYGXRz6Xn7HKdP0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Чайник",
+							"type": "text"
+						},
+						{
+							"key": "anons",
+							"value": "Наушник",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "Данил",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/admin/Desktop/Лого/123.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/books",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|kCUdXyTBfWXgQI0XTUFJWH1vjPYGXRz6Xn7HKdP0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"ewqwqe\",\r\n    \"anons\": \"dadad\",\r\n    \"author\": \"ewqtq\"\r\n\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/books/9",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"books",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Genre",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|kCUdXyTBfWXgQI0XTUFJWH1vjPYGXRz6Xn7HKdP0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Драма",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/genres",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"genres"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Фантастика",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update genre",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|kCUdXyTBfWXgQI0XTUFJWH1vjPYGXRz6Xn7HKdP0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Комедия",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/genres/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"genres",
+						"1"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Фантастика",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Genre view",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/genres",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"genres"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete Genre",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|kCUdXyTBfWXgQI0XTUFJWH1vjPYGXRz6Xn7HKdP0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/genres/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"genres",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/books",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
